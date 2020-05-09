@@ -4,7 +4,7 @@
         "label": "wasm-pack build",
         "type": "shell",
         "command": "wasm-pack",
-        "args": ["build", "--target nodejs"],
+        "args": ["build --target nodejs"],
         "problemMatcher": []
     }]
 }
