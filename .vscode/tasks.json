@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "wasm-pack build",
+        "type": "shell",
+        "command": "wasm-pack",
+        "args": ["build", "--target nodejs"],
+        "problemMatcher": []
+    }]
+}
