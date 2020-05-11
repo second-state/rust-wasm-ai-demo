@@ -2,7 +2,7 @@
 
 在这个例子中，我们演示了如何在 Node.js 中实现高性能的 AI 推理。 计算密集型的 tensorflow 代码是用 Rust 编写的，并在 WebAssembly 中执行。 使用图像识别的面向用户的应用程序是用 JavaScript 编写的，并运行在 Node.js 中。
 
-你可以在 VSCode 或者 VSCode Codespaces中[fork]https://github.com/second-state/csdn-ai-demo 并打开这个 git 库。 使用 VSCode Codespace，您可以在浏览器中编写代码、编译、运行和调试应用程序，而无需安装任何软件。 [参见 https://github.com/second-state/ssvm-nodejs-starter/blob/master/readme.md ]。
+你可以在 VSCode 或者 VSCode Codespaces中 [fork](https://github.com/second-state/csdn-ai-demo/fork) 并打开这个 git 库。 使用 VSCode Codespace，您可以在浏览器中编写代码、编译、运行和调试应用程序，而无需安装任何软件。 参见 https://github.com/second-state/ssvm-nodejs-starter/blob/master/readme.md
 
 ## 设置
 
@@ -75,10 +75,10 @@ Inference: 1322.637ms
 Detected object id 654 with probability 0.3256046
 ```
 
-Category ID `654` 可以在 [imagenet_slim_labels.txt](imagenet_slim_labels.txt)找到。 行数 `654`.
+Category ID `654` 可以在 [imagenet_slim_labels.txt](imagenet_slim_labels.txt) 找到。 行数 `654`.
 
 ```
-654 military uniform
+654 军装
 ```
 
 第二个任务是识别一张猫的图像，识别这张图像需要0.8秒。
@@ -98,5 +98,5 @@ Detected object id 284 with probability 0.27039126
 Category ID `284` 可以在这里找到 [imagenet_slim_labels.txt](imagenet_slim_labels.txt). 行数 `284`.
 
 ```
-284 虎 猫
+284 虎猫
 ```
