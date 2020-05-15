@@ -13,25 +13,11 @@ pub fn infer(params: &str) -> String {
 
     nodejs_helper::console::log(&format!("Model: {:?}", model_filename));
     nodejs_helper::console::log(&format!("Image: {:?}", image_filename));
-
     let model_data = &nodejs_helper::fs::read_file_sync(model_filename);
     let image_data = &nodejs_helper::fs::read_file_sync(image_filename);
 
     let res: (f32, u32) = infer_impl (model_data, image_data, image_height, image_width).unwrap();
     return serde_json::to_string(&res).unwrap();
-    /*
-    if res.1 == 0 {
-        return serde_json::to_string("None detected").unwrap();
-    } else {
-        let s = format!("detected object id {} with probability {}", res.1, res.0);
-        return serde_json::to_string(&s).unwrap();
-    }
-    */
-    // return serde_json::to_string(&res).unwrap();
-
-    // let s = format!("{:?}", res);
-    // nodejs_helper::console::log(&s);
-    // return "success".to_string();
 }
 
 fn infer_impl (model_data: &[u8], image_data: &[u8], image_height: usize, image_width: usize) -> TractResult<(f32, u32)> {
