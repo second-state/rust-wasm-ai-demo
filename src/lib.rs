@@ -21,29 +21,23 @@ pub fn infer(params: &str) -> String {
 }
 
 fn infer_impl (model_data: &[u8], image_data: &[u8], image_height: usize, image_width: usize) -> TractResult<(f32, u32)> {
-
     nodejs_helper::console::time("Inference");
-
     // load the model
     let mut model_data_mut = Cursor::new(model_data);
-    let mut model =
-        tract_tensorflow::tensorflow().model_for_read(&mut model_data_mut)?;
+    let mut model = tract_tensorflow::tensorflow().model_for_read(&mut model_data_mut)?;
     nodejs_helper::console::time_log("Inference", "Model loaded");
 
     // specify input type and shape
     model.set_input_fact(0, InferenceFact::dt_shape(f32::datum_type(), tvec!(1, image_height, image_width, 3)))?;
-
     // optimize the model and get an execution plan
     let model = model.into_optimized()?;
     let plan = SimplePlan::new(&model)?;
     nodejs_helper::console::time_log("Inference", "Plan loaded");
 
     // open image, resize it and make a Tensor out of it
-    // let image = image::open(image_filename).unwrap().to_rgb();
     let image = image::load_from_memory(image_data).unwrap().to_rgb();
     nodejs_helper::console::time_log("Inference", "Image loaded");
-    let resized =
-        image::imageops::resize(&image, image_height as u32, image_width as u32, ::image::imageops::FilterType::Triangle);
+    let resized = image::imageops::resize(&image, image_height as u32, image_width as u32, ::image::imageops::FilterType::Triangle);
     let image: Tensor = tract_ndarray::Array4::from_shape_fn((1, image_height, image_width, 3), |(_, y, x, c)| {
         resized[(x as _, y as _)][c] as f32 / 255.0
     })
@@ -61,8 +55,6 @@ fn infer_impl (model_data: &[u8], image_data: &[u8], image_height: usize, image_
         .cloned()
         .zip(1..)
         .max_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
-    // let s = format!("result: {:?}", best);
-    // nodejs_helper::console::log(&s);
     nodejs_helper::console::time_end("Inference");
     match best {
         Some(t) => Ok(t),
