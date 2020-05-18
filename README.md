@@ -4,7 +4,7 @@
 
 <p>
     <a href="https://online.visualstudio.com/environments/new?name=AIaaS%20with%20Rust%20and%20WebAssembly&repo=second-state/rust-wasm-ai-demo">
-        <img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Fcloud.secondstate.io%2Fserver-side-webassembly%2Fexamples-and-use-cases%2Fartificial-intelligence">
+        <img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Faka.ms%2Fvso-badge">
     </a>
 </p>
 
