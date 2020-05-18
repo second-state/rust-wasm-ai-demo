@@ -2,6 +2,12 @@
 
 [中文](README-ZH.md)
 
+<p>
+    <a href="https://online.visualstudio.com/environments/new?name=AIaaS%20with%20Rust%20and%20WebAssembly&repo=second-state/rust-wasm-ai-demo">
+        <img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Fcloud.secondstate.io%2Fserver-side-webassembly%2Fexamples-and-use-cases%2Fartificial-intelligence">
+    </a>
+</p>
+
 In this example, we demonstrate how to do high performance AI inference in Node.js. The computationally intensive tensorflow code is written in Rust and executed in WebAssembly. The user-facing application that uses image recognition is written in JavaScript and runs in Node.js.
 
 > You can [fork](https://github.com/second-state/csdn-ai-demo) and open this git repository inside VSCode or VSCode Codespaces. With VSCode Codespaces, you can write code, compile, run and debug the application in your browser without installing any software. [See how](https://github.com/second-state/ssvm-nodejs-starter/blob/master/README.md).
