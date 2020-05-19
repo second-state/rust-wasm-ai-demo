@@ -12,7 +12,7 @@ In this example, we demonstrate how to do high performance AI inference in Node.
 
 ![wasm Rust AI](https://blog.secondstate.io/images/AIaas%2030seconds.gif)
 
-> You can [fork](https://github.com/second-state/csdn-ai-demo) and open this git repository inside VSCode or VSCode Codespaces. With VSCode Codespaces, you can write code, compile, run and debug the application in your browser without installing any software. [See how](https://github.com/second-state/ssvm-nodejs-starter/blob/master/README.md).
+> You can [fork](https://github.com/second-state/csdn-ai-demo) and open this git repository inside VSCode or VSCode Codespaces. With VSCode Codespaces, you can write code, compile, run and debug the application in your browser without installing any software. [See how](https://github.com/second-state/ssvm-nodejs-starter/blob/master/README.md). Click [here](https://youtu.be/Ce2am-ugQhg) to see the video tutorial
 
 ## Set up
 
