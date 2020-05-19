@@ -10,7 +10,7 @@
 
 ![AI as a service](https://camo.githubusercontent.com/7ee97417b1f6fd51660ba64ec64a7dc70f51e851/68747470733a2f2f626c6f672e7365636f6e6473746174652e696f2f696d616765732f414961617325323033307365636f6e64732e676966)
 
-> 你可以在 VSCode 或者 VSCode Codespaces中 [fork](https://github.com/second-state/csdn-ai-demo/fork) 并打开这个 git 库。 使用 VSCode Codespace，您可以在浏览器中编写代码、编译、运行和调试应用程序，而无需安装任何软件。 参见 https://github.com/second-state/ssvm-nodejs-starter/blob/master/readme.md
+> 你可以在 VSCode 或者 VS Codespaces 中 [fork](https://github.com/second-state/csdn-ai-demo/fork) 并打开这个 git 库。 使用 VS Codespaces，您可以在浏览器中编写代码、编译、运行和调试应用程序，而无需安装任何软件。 参见 https://github.com/second-state/ssvm-nodejs-starter/
 
 ## 设置
 
