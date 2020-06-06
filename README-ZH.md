@@ -29,7 +29,8 @@ $ [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 $ nvm install v10.19.0
 $ nvm use v10.19.0
 
-$ npm install -g wasm-pack
+$ npm install -g ssvmup # Append --unsafe-perm if permission denied
+$ npm install ssvm
 ```
 
 ## 创建新项目
@@ -45,7 +46,6 @@ The [Cargo.toml](Cargo.toml) 文件显示依赖项.
 
 * The `wasm-bindgen` crate is required for invoking Rust functions from JavaScript. 
 * The `serde` and `serde_json` crates allow us to work with JSON strings to represent complex data types. 
-* The `nodejs-helper` crate allows the Rust function to access console, file system, database, and network.
 * The `images` crate only enables features that are compatible with WebAssembly.
 
 ## 写 Rust 代码
@@ -55,7 +55,7 @@ The [Cargo.toml](Cargo.toml) 文件显示依赖项.
 ## 创建 WASM bytecode
 
 ```
-$ wasm-pack build --target nodejs
+$ ssvmup build
 ```
 
 ## 创建一个node app

@@ -10,7 +10,7 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}/node/app.js",
             "cwd": "${workspaceFolder}/node",
-            "preLaunchTask": "wasm-pack build"
+            "preLaunchTask": "ssvmup build"
         }
     ]
 }

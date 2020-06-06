@@ -1,9 +1,9 @@
 {
     "version": "2.0.0",
     "tasks": [{
-        "label": "wasm-pack build",
+        "label": "ssvmup build",
         "type": "shell",
-        "command": "wasm-pack build --target nodejs",
+        "command": "ssvmup build",
         "problemMatcher": []
     }]
 }

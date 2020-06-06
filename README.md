@@ -31,7 +31,8 @@ $ [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 $ nvm install v10.19.0
 $ nvm use v10.19.0
 
-$ npm install -g wasm-pack
+$ npm install -g ssvmup # Append --unsafe-perm if permission denied
+$ npm install ssvm
 ```
 
 ## Create new project
@@ -47,7 +48,6 @@ The [Cargo.toml](Cargo.toml) file shows the dependencies.
 
 * The `wasm-bindgen` crate is required for invoking Rust functions from JavaScript. 
 * The `serde` and `serde_json` crates allow us to work with JSON strings to represent complex data types. 
-* The `nodejs-helper` crate allows the Rust function to access console, file system, database, and network.
 * The `images` crate only enables features that are compatible with WebAssembly.
 
 ## Write Rust code
@@ -57,7 +57,7 @@ The [src/lib.rs](src/lib.rs) file contains Rust functions to read the tensorflow
 ## Build the WASM bytecode
 
 ```
-$ wasm-pack build --target nodejs
+$ ssvmup build
 ```
 
 ## Create a node app
