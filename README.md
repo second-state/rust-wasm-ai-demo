@@ -35,14 +35,11 @@ $ npm install -g ssvmup # Append --unsafe-perm if permission denied
 $ npm install ssvm
 ```
 
-## Create new project
-
 ```
-$ cargo new --lib tensorflow
-$ cd tensorflow
+$ npm i express-fileupload
 ```
 
-## Change the cargo config file
+## The cargo config file
 
 The [Cargo.toml](Cargo.toml) file shows the dependencies.
 
@@ -50,7 +47,7 @@ The [Cargo.toml](Cargo.toml) file shows the dependencies.
 * The `serde` and `serde_json` crates allow us to work with JSON strings to represent complex data types. 
 * The `images` crate only enables features that are compatible with WebAssembly.
 
-## Write Rust code
+## Rust function
 
 The [src/lib.rs](src/lib.rs) file contains Rust functions to read the tensorflow model from a file, read and resize an image, and then run the model against the image to recognize the image subject. The result is returned as a JSON array containing the the ImageNet category ID for the recognized object, and the confidence level for this prediction. [Learn more](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet) about this example.
 
@@ -60,14 +57,14 @@ The [src/lib.rs](src/lib.rs) file contains Rust functions to read the tensorflow
 $ ssvmup build
 ```
 
-## Create a node app
+## Node.js app
 
-The [node/app.js](node/app.js) app shows how to call the Rust functions from JavaScript. It uses a [pre-trained tensorflow model](https://storage.googleapis.com/mobilenet_v2/checkpoints/mobilenet_v2_1.4_224.tgz) to recognize two images.
+The [node/test.js](node/test.js) app shows how to call the Rust functions from JavaScript. It uses a [pre-trained tensorflow model](https://storage.googleapis.com/mobilenet_v2/checkpoints/mobilenet_v2_1.4_224.tgz) to recognize two images.
 
 ## Test
 
 ```
-$ node app.js
+$ node test.js
 ```
 
 The first task is to recognize an image of computer scientist Grace Hopper. It takes 0.9s to recognize this image.
