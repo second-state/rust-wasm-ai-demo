@@ -16,18 +16,23 @@ $(function() {
     var options = {
       target: '#result',
       url: "/infer",
-      type: "post"
+      type: "post",
+      success: enableButton
     };
     $('#infer').ajaxForm(options);
 });
+
+function enableButton(responseText, statusText, xhr, $form)  {
+    $('#recognize').prop('disabled', false);
+}
     </script>
   </head>
 
   <body>
     <div class="container">
 
-      <h1>Calling a Rust function in Node.js</h1>
-      <p class="lead">What's on the image?</p>
+      <h1>What's on the image?</h1>
+      <p class="lead">Image recognition as a service powered by Rust, Tensorflow, and Node.js. <a href="https://www.secondstate.io/articles/artificial-intelligence/">How it works</a></p>
 
       <form id="infer" enctype="multipart/form-data">
         <div class="form-group">
@@ -35,7 +40,7 @@ $(function() {
           <input type="file" class="form-control-file" id="image_file" name="image_file">
         </div>
 
-        <button type="submit" class="btn btn-primary mb-2" onclick="$('#result').text('Please wait. This could take a minute')">Recognize</button>
+	<button type="submit" class="btn btn-primary mb-2" id="recognize" onclick="setTimeout(function(){$('#result').text('Please wait. This could take a minute');$('#recognize').prop('disabled', true);},0);return true;">Recognize</button>
       </form>
 
       <div class="jumbotron">
