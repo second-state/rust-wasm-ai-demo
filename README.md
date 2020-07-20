@@ -14,7 +14,7 @@ In this example, we demonstrate how to do high performance AI inference in Node.
 
 > Check out the [high-res screencast](https://youtu.be/Ce2am-ugQhg). [Fork](https://github.com/second-state/csdn-ai-demo) and open this git repository inside VSCode or VS Codespaces. With VS Codespaces, you can write code, compile, run and debug the application in your browser without installing any software. [See how](https://github.com/second-state/ssvm-nodejs-starter/blob/master/README.md).
 
-## Set up
+## Set up locally
 
 ```
 $ sudo apt-get update
@@ -38,6 +38,34 @@ $ npm install ssvm
 ```
 $ npm i express-fileupload
 ```
+
+## Set up using docker
+
+```bash
+# build the docker image
+$ docker build -t ssvm-nodejs-ai:v1 .
+
+# run the docker container in interactive shell
+$ docker run -p 8080:8080 --rm -it -v $(pwd):/app ssvm-nodejs-ai:v1
+```
+
+Following commands are in container's shell.
+
+```bash
+$ cd /app
+
+# build the WASM bytecode 
+$ ssvmup build
+
+# install node dependencies
+$ cd /app/node
+$ npm install
+
+# run the webserver
+$ npm start
+```
+
+Once, its up and running, go to http://0.0.0.0:8080 to use the app.
 
 ## The cargo config file
 
