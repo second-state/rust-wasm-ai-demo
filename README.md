@@ -12,9 +12,31 @@ In this example, we demonstrate how to do high performance AI inference in Node.
 
 ![wasm Rust AI](https://blog.secondstate.io/images/AIaas%2030seconds.gif)
 
-> Check out the [high-res screencast](https://youtu.be/Ce2am-ugQhg). [Fork](https://github.com/second-state/csdn-ai-demo) and open this git repository inside VSCode or VS Codespaces. With VS Codespaces, you can write code, compile, run and debug the application in your browser without installing any software. [See how](https://github.com/second-state/ssvm-nodejs-starter/blob/master/README.md).
+> Check out the [high-res screencast](https://youtu.be/Ce2am-ugQhg).
 
-## Set up locally
+## Set up the build and runtime environment
+
+### Docker
+
+```bash
+# build the docker image
+$ docker build -t ssvm-nodejs-ai:v1 .
+
+# run the docker container in interactive shell
+$ docker run -p 8080:8080 --rm -it -v $(pwd):/app ssvm-nodejs-ai:v1
+```
+
+Following commands are in container's shell.
+
+```bash
+# install node dependencies
+$ cd /app/node
+$ npm install
+
+$ cd /app
+```
+
+### Ubuntu 20.04 TLS
 
 ```
 $ sudo apt-get update
@@ -33,39 +55,9 @@ $ nvm use v10.19.0
 
 $ npm install -g ssvmup # Append --unsafe-perm if permission denied
 $ npm install ssvm
-```
 
-```
 $ npm i express-fileupload
 ```
-
-## Set up using docker
-
-```bash
-# build the docker image
-$ docker build -t ssvm-nodejs-ai:v1 .
-
-# run the docker container in interactive shell
-$ docker run -p 8080:8080 --rm -it -v $(pwd):/app ssvm-nodejs-ai:v1
-```
-
-Following commands are in container's shell.
-
-```bash
-$ cd /app
-
-# build the WASM bytecode 
-$ ssvmup build
-
-# install node dependencies
-$ cd /app/node
-$ npm install
-
-# run the webserver
-$ npm start
-```
-
-Once, its up and running, go to http://0.0.0.0:8080 to use the app.
 
 ## The cargo config file
 
@@ -135,3 +127,12 @@ Category ID `284` can be found in the [imagenet_slim_labels.txt](imagenet_slim_l
 284 tiger cat
 ```
 
+## Web service
+
+Start the Node.js application in a web server.
+
+```
+$ node server.js
+```
+
+Then, go to http://ip-addr:8080/ and upload an image for recognition!
