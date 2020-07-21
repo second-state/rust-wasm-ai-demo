@@ -24,16 +24,7 @@ $ docker build -t ssvm-nodejs-ai:v1 .
 
 # run the docker container in interactive shell
 $ docker run -p 8080:8080 --rm -it -v $(pwd):/app ssvm-nodejs-ai:v1
-```
-
-Following commands are in container's shell.
-
-```bash
-# install node dependencies
-$ cd /app/node
-$ npm install
-
-$ cd /app
+(docker) # cd /app
 ```
 
 ### Ubuntu 20.04 TLS
@@ -84,6 +75,7 @@ The [node/test.js](node/test.js) app shows how to call the Rust functions from J
 ## Test
 
 ```
+$ cd node
 $ node test.js
 ```
 
@@ -132,6 +124,7 @@ Category ID `284` can be found in the [imagenet_slim_labels.txt](imagenet_slim_l
 Start the Node.js application in a web server.
 
 ```
+$ cd node
 $ node server.js
 ```
 
