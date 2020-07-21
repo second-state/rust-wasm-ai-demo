@@ -24,7 +24,7 @@ $ docker build -t ssvm-nodejs-ai:v1 .
 
 # run the docker container in interactive shell
 $ docker run -p 8080:8080 --rm -it -v $(pwd):/app ssvm-nodejs-ai:v1
-(docker) # cd /app
+(docker) $ cd /app
 ```
 
 ### Ubuntu 20.04 TLS
