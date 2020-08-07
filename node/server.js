@@ -15,7 +15,7 @@ fs.readFileSync('imagenet_slim_labels.txt', 'utf-8')
 const app = express();
 const host = '0.0.0.0';
 const port = 8080;
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(fileUpload());
 // app.use(express.urlencoded({ extended: false }));
 
